@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import '@testing-library/react/cleanup-after-each'
 
 import { Display, Dashboard } from '../../components'
@@ -39,6 +39,42 @@ describe('<Display />', () => {
         const { getByTestId } = render(<Display />)
 
         getByTestId(/balls-count/i)
+    })
+
+    it('renders outs text', () => {
+        const { getByText } = render(<Display />)
+
+        getByText(/outs/i)
+    })
+
+    it('renders outs count', () => {
+        const { getByTestId } = render(<Display />)
+
+        getByTestId(/outs-count/i)
+    })
+
+    it('renders hits text', () => {
+        const { getByText } = render(<Display />)
+
+        getByText(/hits/i)
+    })
+
+    it('renders hits count', () => {
+        const { getByTestId } = render(<Display />)
+
+        getByTestId(/hits-count/i)
+    })
+
+    it('renders walks text', () => {
+        const { getByText } = render(<Display />)
+
+        getByText(/walks/i)
+    })
+
+    it('renders walks count', () => {
+        const { getByTestId } = render(<Display />)
+
+        getByTestId(/walks-count/i)
     })
 
 })
